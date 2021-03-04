@@ -6,7 +6,7 @@ I watched closely and followed along https://www.youtube.com/watch?v=w7ejDZ8SWv8
 I am going to build on this app and experiment with it.  I hope that one day it will be a working keep-track fitness app.
 
 
-Usage
+# Usage
 Install dependencies
 
 npm install
