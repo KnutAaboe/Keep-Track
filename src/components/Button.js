@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types'
 
+
+//with the button, we use the onClick as a input, where when we call/use the button the way we want where it's used
 const Button = ({ color, text, onClick }) => {
   return (
     <button

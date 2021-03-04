@@ -1,27 +1,30 @@
 import { useState } from 'react'
 
 const AddTask = ({ onAdd }) => {
-  const [text, setText] = useState('')
-  const [day, setDay] = useState('')
-  const [reminder, setReminder] = useState(false)
+  const [text, setText] = useState('')            //default
+  const [day, setDay] = useState('')              //default
+  const [reminder, setReminder] = useState(false) //default
 
+  //
   const onSubmit = (e) => {
     e.preventDefault()
 
-    if (!text) {
+    if (!text) { //If the state text is not there
       alert('Please add a task')
       return
     }
 
-    onAdd({ text, day, reminder })
+    //If above passes
+    onAdd({ text, day, reminder }) 
 
+    //Clear the form after added task
     setText('')
     setDay('')
     setReminder(false)
   }
 
   return (
-    <form className='add-form' onSubmit={onSubmit}>
+    <form className='add-form' onSubmit={onSubmit}> 
       <div className='form-control'>
         <label>Task</label>
         <input
