@@ -1,5 +1,5 @@
 
-# Learning project
+## Learning project
 
 I watched closely and followed along https://www.youtube.com/watch?v=w7ejDZ8SWv8&t=4978s (React Crash Course 2021 (Task Tracker App))
 
