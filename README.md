@@ -1,6 +1,10 @@
-React Crash Course 2021 (Task Tracker App)
+Learning project
 
-This is the project from the YouTube crash course. It includes the react ui as well as JSON-server for our mock backend
+I watched closely and followed along https://www.youtube.com/watch?v=w7ejDZ8SWv8&t=4978s (React Crash Course 2021 (Task Tracker App))
+
+I am going to build on this app and experiment with it. My hopes are that one day it will be a working keep-track fitness app.
+
+
 Usage
 Install dependencies
 
