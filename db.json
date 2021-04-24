@@ -1,12 +1,6 @@
 {
   "tasks": [
     {
-      "id": 2,
-      "text": "School",
-      "day": "March 4th",
-      "reminder": false
-    },
-    {
       "text": "Buy stuff",
       "day": "Jan 2th",
       "reminder": true,

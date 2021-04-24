@@ -54,6 +54,15 @@ body {
   width: 100%;
 }
 
+.btn-smaller  {
+  background: rgb(35, 54, 134);
+  padding: 5px 10px;
+  margin-left: 0;
+  margin-right: 5px;
+  
+  font-size: 10px;
+}
+
 .task {
   background: #f4f4f4;
   margin: 5px;
@@ -109,4 +118,13 @@ body {
 footer {
   margin-top: 30px;
   text-align: center;
+}
+
+footer div p {
+  display: inline;
+}
+
+.feedback-text {
+  width: 85%;
+  font-size: 14px;
 }

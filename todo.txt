@@ -1,0 +1,15 @@
+HUSK - Applikasjonen skal være ENKEL og OVERSIKTLIG. Skal være engelsk og norsk
+
+KANSKJE - Kunne utregne kalorier brent etter puls og hvor lenge. Kanskje også med arbeidsdag om kor mye du står. Bruker legge inn høyde, vekt o.l, for å få mer detaljert.
+
+PLAN
+About - kort om selve ideen, og kossen applikasjonen fungere.
+Profile - kort om brukeren, kunne skifte (ka?), ha mobilnummer og passord som login?
+Feedbacks - kort kunne fortelle om ka en bruker synes applikasjonen er.
+Home - usikkert
+
+Ha en hoved "Task", som da er enten selve uken eller dag, bestem. Under dette er det flere "tasks" som da er enten dager eller workouts og igjen "tasks" som er øvelser. 
+Ha forskjellig oppsett etter om det er øvelse, interval eller arbeid. 
+
+TODOS
+Gjøre om til riktig format, fikse funksjon kall med feedbacks om det e bare tekst og til email elns. Forstå all koden, oppsettet og gjør om til endelig plan.
