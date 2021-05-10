@@ -55,26 +55,25 @@ body {
 }
 
 .btn-smaller  {
-  background: rgb(35, 54, 134);
+  /* background: rgb(35, 54, 134); */
   padding: 5px 10px;
   margin-left: 0;
   margin-right: 5px;
-  
-  font-size: 10px;
+  font-size: 13px;
 }
 
-.task {
+.workout {
   background: #f4f4f4;
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
 }
 
-.task.reminder {
+.workout.reminder {
   border-left: 5px solid green;
 }
 
-.task h3 {
+.workout h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;

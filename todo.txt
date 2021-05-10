@@ -9,7 +9,10 @@ Feedbacks - kort kunne fortelle om ka en bruker synes applikasjonen er.
 Home - usikkert
 
 Ha en hoved "Task", som da er enten selve uken eller dag, bestem. Under dette er det flere "tasks" som da er enten dager eller workouts og igjen "tasks" som er øvelser. 
-Ha forskjellig oppsett etter om det er øvelse, interval eller arbeid. 
+Ha forskjellig oppsett etter om det er øvelse, interval eller arbeid.
+Kunne redigiere på navn og dato/tid.
+typer: power, cardio and monke
+
 
 TODOS
-Gjøre om til riktig format, fikse funksjon kall med feedbacks om det e bare tekst og til email elns. Forstå all koden, oppsettet og gjør om til endelig plan.
+Gjøre om til riktig format, fikse funksjon kall med feedbacks om det e bare tekst og til email elns. Forstå all koden, oppsettet og gjør om til endelig plan. Task har exercises og ordne med AddTask til at både den kan bli brukt til add workout og exercises.

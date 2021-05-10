@@ -1,16 +1,16 @@
 import { useState } from 'react'
 
-const AddTask = ({ onAdd }) => {
-  const [text, setText] = useState('')            //default
-  const [day, setDay] = useState('')              //default
-  const [reminder, setReminder] = useState(false) //default
+const AddWorkout = ({ onAdd }) => {
+  const [text, setText] = useState('')            
+  const [day, setDay] = useState('')             
+  const [reminder, setReminder] = useState(false)
 
   //
   const onSubmit = (e) => {
     e.preventDefault()
 
     if (!text) { //If the state text is not there
-      alert('Please add a task')
+      alert('Please add a workout')
       return
     }
 
@@ -26,10 +26,10 @@ const AddTask = ({ onAdd }) => {
   return (
     <form className='add-form' onSubmit={onSubmit}> 
       <div className='form-control'>
-        <label>Task</label>
+        <label>Workout</label>
         <input
           type='text'
-          placeholder='Add Task'
+          placeholder='Add Workout'
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
@@ -53,9 +53,9 @@ const AddTask = ({ onAdd }) => {
         />
       </div>
 
-      <input type='submit' value='Save Task' className='btn btn-block' />
+      <input type='submit' value='Save Workout' className='btn btn-block' />
     </form>
   )
 }
 
-export default AddTask
+export default AddWorkout

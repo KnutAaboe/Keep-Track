@@ -2,88 +2,87 @@ import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Tasks from './components/Tasks'
-import AddTask from './components/AddTask'
+import Workouts from './components/Workouts'
+import AddWorkout from './components/AddWorkout'
 import About from './components/About'
 import Feedback from './components/Feedback'
+import Exercise from './components/Exercise'
+import Exercises from './components/Exercises'
 
 const App = () => {
-  const [showAddTask, setShowAddTask] = useState(false)
-  const [tasks, setTasks] = useState([])
+  const [showAddWorkout, setShowAddWorkout] = useState(false)
+  // const [showAddExercise, setShowAddExercise] = useState(false)
+  const [workouts, setWorkouts] = useState([])
 
   useEffect(() => {
-    const getTasks = async () => {
-      const tasksFromServer = await fetchTasks()
-      setTasks(tasksFromServer)
+    const getWorkouts = async () => {
+      const workoutsFromServer = await fetchWorkouts()
+      setWorkouts(workoutsFromServer)
     }
 
-    getTasks()
+    getWorkouts()
   }, [])
 
-  // Fetch Tasks
-  const fetchTasks = async () => {
-    const res = await fetch('http://localhost:5000/tasks')
+  // Fetch Workouts
+  const fetchWorkouts = async () => {
+    const res = await fetch('http://localhost:5000/workouts')
     const data = await res.json()
 
     return data
   }
 
-  // Fetch Task
-  const fetchTask = async (id) => {
-    const res = await fetch(`http://localhost:5000/tasks/${id}`)
+  // Fetch Workout
+  const fetchWorkout = async (id) => {
+    const res = await fetch(`http://localhost:5000/workouts/${id}`)
     const data = await res.json()
 
     return data
   }
 
-  // Add Task
-  const addTask = async (task) => {
-    const res = await fetch('http://localhost:5000/tasks', {
+  // Add Workout
+  const addWorkout = async (workout) => {
+    const res = await fetch('http://localhost:5000/workouts', {
       method: 'POST', 
       headers: { //Since we use a POST, add data, we need to specify the content type
         'Content-type': 'application/json',
       },
-      body: JSON.stringify(task), //Here we set the data we are sending, but first make it to a json
+      body: JSON.stringify(workout), //Here we set the data we are sending, but first make it to a json
     })
 
     const data = await res.json()
 
-    setTasks([...tasks, data])
-
-    // const id = Math.floor(Math.random() * 10000) + 1
-    // const newTask = { id, ...task }
-    // setTasks([...tasks, newTask])
+    setWorkouts([...workouts, data])
   }
 
-  // Delete Task
-  const deleteTask = async (id) => {
-    const res = await fetch(`http://localhost:5000/tasks/${id}`, {
+  // Delete Workout
+  const deleteWorkout = async (id) => {
+    const res = await fetch(`http://localhost:5000/workouts/${id}`, {
       method: 'DELETE',
     })
     //We should control the response status to decide if we will change the state or not.
     res.status === 200
-      ? setTasks(tasks.filter((task) => task.id !== id))
-      : alert('Error Deleting This Task')
+      ? setWorkouts(workouts.filter((workout) => workout.id !== id))
+      : alert('Error Deleting This Workout')
   }
 
   // Toggle Reminder
   const toggleReminder = async (id) => {
-    const taskToToggle = await fetchTask(id)
-    const updTask = { ...taskToToggle, reminder: !taskToToggle.reminder }
+    const workoutToToggle = await fetchWorkout(id)
+    const updWorkout = { ...workoutToToggle, reminder: !workoutToToggle.reminder }
 
-    const res = await fetch(`http://localhost:5000/tasks/${id}`, {
+    const res = await fetch(`http://localhost:5000/workouts/${id}`, {
       method: 'PUT',
       headers: {
         'Content-type': 'application/json',
       },
-      body: JSON.stringify(updTask),
+      body: JSON.stringify(updWorkout),
     })
 
     const data = await res.json()
 
-    setTasks(
-      tasks.map((task) =>
-        task.id === id ? { ...task, reminder: data.reminder } : task
+    setWorkouts(
+      workouts.map((workout) =>
+        workout.id === id ? { ...workout, reminder: data.reminder } : workout
       )
     )
   }
@@ -92,19 +91,19 @@ const App = () => {
     <Router>
       <div className='container'>
         <Header
-          onAdd={() => setShowAddTask(!showAddTask)}
-          showAdd={showAddTask}
+          onAdd={() => setShowAddWorkout(!showAddWorkout)}
+          showAdd={showAddWorkout}
         />
         <Route
           path='/'
           exact
           render={(props) => (
             <>
-              {showAddTask && <AddTask onAdd={addTask} />}
-              {tasks.length > 0 ? (
-                <Tasks
-                  tasks={tasks}
-                  onDelete={deleteTask}
+              {showAddWorkout && <AddWorkout onAdd={addWorkout} />}
+              {workouts.length > 0 ? (
+                <Workouts
+                  workouts={workouts}
+                  onDelete={deleteWorkout}
                   onToggle={toggleReminder}
                 />
               ) : (
@@ -115,6 +114,7 @@ const App = () => {
         />
         <Route path='/about' component={About} />
         <Route path='/feedback' component={Feedback} />
+        <Route path='/exercise' component={Exercise} />
         {/* <Route path='/feedback' component={Feedback} /> HOME  */}
         {/* <Route path='/feedback' component={Feedback} /> PROFILE */}
         <Footer />
